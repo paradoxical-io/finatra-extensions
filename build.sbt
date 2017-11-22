@@ -29,7 +29,8 @@ lazy val `finatra-server` = project.in(file("finatra-server")).
     libraryDependencies ++= {
       Dependencies.requiredFinatraDeps ++
       Seq(
-        "com.google.guava" % "guava" % versions.guava
+        "com.google.guava" % "guava" % versions.guava,
+        "io.paradoxical" %%"paradox-scala-global" % versions.paradoxGlobal
       )
     }
   ).dependsOn(

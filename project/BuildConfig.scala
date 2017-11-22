@@ -33,6 +33,7 @@ object BuildConfig {
     val scalatest = "3.0.1"
     val finatra = "2.13.0"
     val guava = "23.4-jre"
+    val paradoxGlobal = "1.0.8-SNAPSHOT"
   }
 
   def commonSettings() = {
@@ -41,11 +42,11 @@ object BuildConfig {
 
       version := BuildConfig.Revision.version,      
 
-      resolvers += Resolver.sonatypeRepo("releases"),
+      resolvers ++= Seq(
+        Resolver.sonatypeRepo("public")
+      ),
 
       scalaVersion := "2.12.4",
-
-      crossScalaVersions := Seq("2.11.8", scalaVersion.value),
 
       scalacOptions ++= Seq(
         "-deprecation",
@@ -67,15 +68,6 @@ object BuildConfig {
       }),
 
       scalacOptions in doc := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
-
-      publishMavenStyle := true,
-
-      publishTo := Some(
-        if (isSnapshot.value)
-          Opts.resolver.sonatypeSnapshots
-        else
-          Opts.resolver.sonatypeStaging
-      ),
-    )
+    ) ++ Publishing.publishSettings
   }
 }
