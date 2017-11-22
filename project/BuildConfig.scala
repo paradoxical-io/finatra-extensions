@@ -67,9 +67,8 @@ object BuildConfig {
         case _ => Seq("-Xlint")
       }),
 
-      scalacOptions in doc := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
-      sources in (Compile,doc) := Seq.empty,
-      publishArtifact in (Compile, packageDoc) := false
+      scalacOptions in (Compile, doc) := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
+      scalacOptions in (Compile, doc) += "-no-java-comments"
     ) ++ Publishing.publishSettings
   }
 }
