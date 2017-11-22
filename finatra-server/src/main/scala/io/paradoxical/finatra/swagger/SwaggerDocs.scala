@@ -1,29 +1,16 @@
-//
-// Copyright (c) 2011-2016 by , Inc.
-//
-
 package io.paradoxical.finatra.swagger
 
-import com.twitter.finatra.http.Controller
 import com.twitter.finatra.http.routing.HttpRouter
 import com.twitter.server.TwitterServer
 import io.swagger.converter.{ModelConverter, ModelConverters}
+import io.swagger.models.Info
 import io.swagger.models.auth.ApiKeyAuthDefinition
-import io.swagger.models.{Info, Swagger}
 import io.swagger.scala.converter.SwaggerScalaModelConverter
 
 trait ApiDocumentationConfig {
   val description: String
   val version: String
   val title: String
-}
-
-/**
- * Defines swagger for a service. Mix in to controllers
- */
-trait ApiDescription extends SwaggerSupport {
-  self: Controller =>
-  override protected implicit val swagger: Swagger = SwaggerDefinition
 }
 
 /** Trait to add swagger controller **/
