@@ -1,0 +1,1 @@
+-Dscala.color=true -Dsbt.override.build.repos=true
