@@ -68,6 +68,8 @@ object BuildConfig {
       }),
 
       scalacOptions in doc := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
+      sources in (Compile,doc) := Seq.empty,
+      publishArtifact in (Compile, packageDoc) := false
     ) ++ Publishing.publishSettings
   }
 }
