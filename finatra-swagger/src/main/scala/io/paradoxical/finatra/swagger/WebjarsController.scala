@@ -3,7 +3,7 @@ package io.paradoxical.finatra.swagger
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
 import com.twitter.finatra.http.response.ResponseBuilder
-import com.twitter.finatra.http.routing.FileResolver
+import com.twitter.finatra.utils.FileResolver
 import com.twitter.util.Duration
 import java.util.Date
 import java.util.concurrent.TimeUnit

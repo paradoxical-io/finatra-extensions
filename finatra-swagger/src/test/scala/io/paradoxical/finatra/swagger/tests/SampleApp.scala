@@ -1,10 +1,10 @@
 package io.paradoxical.finatra.swagger.tests
 
-import io.paradoxical.finatra.swagger.{Resolvers, SwaggerController, WebjarsController}
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.twitter.finatra.http.HttpServer
 import com.twitter.finatra.http.filters.CommonFilters
 import com.twitter.finatra.http.routing.HttpRouter
+import io.paradoxical.finatra.swagger.{SwaggerController, WebjarsController}
 import io.swagger.models.auth.BasicAuthDefinition
 import io.swagger.models.{Info, Swagger}
 import io.swagger.util.Json

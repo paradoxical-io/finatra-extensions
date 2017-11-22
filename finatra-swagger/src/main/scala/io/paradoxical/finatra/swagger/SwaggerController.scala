@@ -6,8 +6,8 @@ import com.twitter.finatra.response.Mustache
 import io.swagger.models.Swagger
 import io.swagger.util.Json
 
-@Mustache("index")
-case class SwaggerView(title: String, path: String)
+@Mustache("redoc")
+case class Redoc(modelPath: String)
 
 class SwaggerController(docPath: String = "/api-docs", swagger: Swagger) extends Controller {
   get(s"${docPath}/model") { request: Request =>
@@ -17,6 +17,10 @@ class SwaggerController(docPath: String = "/api-docs", swagger: Swagger) extends
 
   get(s"${docPath}/ui") { request: Request =>
     response.temporaryRedirect
-      .location("../../webjars/swagger-ui/2.2.8/index.html?url=/api-docs/model")
+      .location("../../webjars/swagger-ui/3.4.4/index.html?url=/api-docs/model")
+  }
+
+  get(s"$docPath/redoc") { request: Request =>
+    Redoc(modelPath = s"$docPath/model")
   }
 }

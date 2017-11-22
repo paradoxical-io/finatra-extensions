@@ -10,14 +10,13 @@ object BuildConfig {
 
     val requiredFinatraDeps = Seq(
       "com.twitter" %% "finatra-http" % versions.finatra,
-      "com.twitter" %% "finatra-slf4j" % versions.finatra,
       "org.joda" % "joda-convert" % "1.8"
     )
 
     val swaggerDeps = Seq(
-      "io.swagger" % "swagger-core" % "1.5.12",
-      "io.swagger" %% "swagger-scala-module" % "1.0.3",
-      "org.webjars" % "swagger-ui" % "2.2.8",
+      "io.swagger" % "swagger-core" % "1.5.16",
+      "io.swagger" %% "swagger-scala-module" % "1.0.4",
+      "org.webjars" % "swagger-ui" % "3.4.4",
       "net.bytebuddy" % "byte-buddy" % "1.6.1"
     )
 
@@ -31,7 +30,7 @@ object BuildConfig {
   object versions {
     val mockito = "1.10.19"
     val scalatest = "3.0.1"
-    val finatra = "2.13.0"
+    val finatra = "17.11.0"
     val guava = "23.4-jre"
     val paradoxGlobal = "1.1"
   }

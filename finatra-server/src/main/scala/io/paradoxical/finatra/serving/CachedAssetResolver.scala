@@ -2,7 +2,7 @@ package io.paradoxical.finatra.serving
 
 import com.google.common.cache.CacheBuilder
 import com.google.common.hash.Hashing
-import com.twitter.finatra.http.routing.FileResolver
+import com.twitter.finatra.utils.FileResolver
 import com.twitter.inject.annotations.Flag
 import java.io.{ByteArrayInputStream, InputStream}
 import java.util.concurrent.TimeUnit
