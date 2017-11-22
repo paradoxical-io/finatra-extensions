@@ -1,7 +1,3 @@
-//
-// Copyright (c) 2011-2017 by Curalate, Inc.
-//
-
 package io.paradoxical.finatra.security.cors
 
 import com.twitter.finagle.http.filter.Cors

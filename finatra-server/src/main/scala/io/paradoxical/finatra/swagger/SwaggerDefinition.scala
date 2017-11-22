@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2011-2016 by Curalate, Inc.
+// Copyright (c) 2011-2016 by , Inc.
 //
 
 package io.paradoxical.finatra.swagger
