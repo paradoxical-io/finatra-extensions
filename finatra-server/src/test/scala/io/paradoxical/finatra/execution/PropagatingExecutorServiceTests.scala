@@ -17,6 +17,7 @@ import scala.language.postfixOps
 
 class PropagatingExecutorServiceTests extends FlatSpec with Matchers {
   val provider = TwitterExecutionContextProvider
+  protected val logger = org.slf4j.LoggerFactory.getLogger(getClass)
 
   "PropagatingExecutionContext" should "propagate Twitter Locals with an executor" in {
     val pool = provider.of(Executors.newFixedThreadPool(1))
@@ -26,7 +27,7 @@ class PropagatingExecutorServiceTests extends FlatSpec with Matchers {
 
     val fut = pool.submit(new Callable[Boolean] {
       override def call(): Boolean = {
-        println(s"PropagatingExecutionContext: local() == ${local()}")
+        logger.debug(s"PropagatingExecutionContext: local() == ${local()}")
 
         local().contains(1)
       }
@@ -43,7 +44,7 @@ class PropagatingExecutorServiceTests extends FlatSpec with Matchers {
 
     val fut = pool.submit(new Callable[Boolean] {
       override def call(): Boolean = {
-        println(s"PropagatingExecutionContext: local() == ${local()}")
+        logger.debug(s"PropagatingExecutionContext: local() == ${local()}")
 
         local().contains(1)
       }

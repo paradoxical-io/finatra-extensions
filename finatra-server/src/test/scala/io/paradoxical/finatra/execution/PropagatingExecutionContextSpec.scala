@@ -24,7 +24,7 @@ class PropagatingExecutionServiceTests extends FlatSpec with Matchers {
     local.update(1)
 
     val fut = pool.submit(new Callable[Unit] {
-      override def call() = println(s"PropagatingExecutionContext: local() == ${local()}")
+      override def call() = logger.debug(s"PropagatingExecutionContext: local() == ${local()}")
 
       local() should equal(Some(1))
     }).toScalaFuture()
@@ -41,7 +41,7 @@ class PropagatingExecutionContextSpec extends FlatSpec with Matchers {
     local.update(1)
 
     val fut = Future {
-      println(s"PropagatingExecutionContext: local() == ${local()}")
+      logger.debug(s"PropagatingExecutionContext: local() == ${local()}")
       local() should equal(Some(1))
     }
 
@@ -55,7 +55,7 @@ class PropagatingExecutionContextSpec extends FlatSpec with Matchers {
     local.update(1)
 
     val fut = Future {
-      println(s"Scala ExecutionContext: local() == ${local()}")
+      logger.debug(s"Scala ExecutionContext: local() == ${local()}")
       local() should not equal Some(1)
     }
 
