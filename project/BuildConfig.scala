@@ -32,7 +32,7 @@ object BuildConfig {
     val scalatest = "3.0.1"
     val finatra = "17.11.0"
     val guava = "23.4-jre"
-    val paradoxGlobal = "1.1"
+    val paradoxGlobal = "1.2"
   }
 
   def commonSettings() = {
