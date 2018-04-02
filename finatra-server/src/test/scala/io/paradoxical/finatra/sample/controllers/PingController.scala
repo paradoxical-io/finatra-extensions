@@ -6,7 +6,7 @@ import io.paradoxical.global.tiny.StringValue
 
 class PingController extends Framework.RestApi {
   getWithDoc("/ping/:data") {
-    _.description("Ping API")
+    _.description("Ping API").request[PingRequest].responseWith[PingResponse](status = 200)
   } { request: PingRequest =>
     info("ping")
     PingResponse(request.data)

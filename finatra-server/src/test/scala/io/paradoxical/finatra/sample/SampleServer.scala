@@ -23,8 +23,9 @@ class SampleServer extends HttpServiceBase {
       .filter[LoggingMDCFilter[Request, Response]]
       .filter[TraceIdMDCFilter[Request, Response]]
       .filter[CommonFilters]
-      .add[PingController]
 
     configureDocumentation(router)
+
+    router.add[PingController]
   }
 }

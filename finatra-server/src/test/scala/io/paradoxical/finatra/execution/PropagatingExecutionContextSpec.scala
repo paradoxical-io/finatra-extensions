@@ -18,7 +18,7 @@ import scala.util.control.NoStackTrace
 
 class PropagatingExecutionServiceTests extends FlatSpec with Matchers {
   protected val logger = org.slf4j.LoggerFactory.getLogger(getClass)
-  
+
   "PropagatingExecutionContext" should "propagate Twitter Locals with the PropagatingExecutionContext" in {
     val pool = TwitterExecutionContextProvider.of(Executors.newFixedThreadPool(1))
 

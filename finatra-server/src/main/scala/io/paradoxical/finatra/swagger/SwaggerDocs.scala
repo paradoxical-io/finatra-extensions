@@ -44,9 +44,11 @@ trait SwaggerDocs {
   }
 
   def configureDocumentation(router: HttpRouter): Unit = {
+    // create swagger
+    swaggerInfo
+
     router.add(new SwaggerController(swagger = SwaggerDefinition))
     router.add[WebjarsController]
-
 
     // add the converters in order to swagger
     swaggerConverters.reverse.foreach(ModelConverters.getInstance().addConverter)
