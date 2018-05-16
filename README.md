@@ -2,6 +2,8 @@ Finatra Extensions
 ===
 
 [![Build Status](https://travis-ci.org/paradoxical-io/finatra-extensions.svg?branch=master)](https://travis-ci.org/paradoxical-io/finatra-extensions)
+[![Maven Central](https://img.shields.io/maven-central/v/io.paradoxical/finatra-test_2.12.svg)](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22finatra-test_2.12t%22)
+
 
 This repo is a collection of extensions and utilities to make working with Finatra easier.
 
