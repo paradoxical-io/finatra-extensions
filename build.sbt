@@ -13,12 +13,13 @@ lazy val `finatra-test` = project.in(file("finatra-test")).
       "com.twitter" %% "finatra-http" % versions.finatra,
       "com.twitter" %% "inject-modules" % versions.finatra,
       "com.twitter" %% "inject-server" % versions.finatra,
+      "com.google.inject.extensions" % "guice-testlib" % versions.guice,
       "com.twitter" %% "inject-app" % versions.finatra classifier "tests",
       "com.twitter" %% "inject-core" % versions.finatra classifier "tests",
       "com.twitter" %% "finatra-http" % versions.finatra classifier "tests",
       "com.twitter" %% "finatra-thrift" % versions.finatra classifier "tests",
       "com.twitter" %% "inject-modules" % versions.finatra classifier "tests",
-      "com.twitter" %% "inject-server" % versions.finatra classifier "tests"
+      "com.twitter" %% "inject-server" % versions.finatra classifier "tests",
     )
   )
 
