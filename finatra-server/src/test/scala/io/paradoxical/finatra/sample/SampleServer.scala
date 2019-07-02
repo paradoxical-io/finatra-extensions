@@ -10,7 +10,7 @@ import io.paradoxical.finatra.swagger.ApiDocumentationConfig
 object SampleServerMain extends SampleServer
 
 class SampleServer extends HttpServiceBase {
-  override def defaultFinatraHttpPort = ":9999"
+  override def defaultHttpPort = ":9999"
 
   override def documentation = new ApiDocumentationConfig {
     override val description: String = "Sample"
